@@ -90,7 +90,7 @@ window.addEventListener('load',function(){
         constructor(game){
             this.game = game;
             this.x = this.game.width;
-            this.speedX = Math.Random() * -1.5 - 0.5;
+            this.speedX = Math.random() * -1.5 - 0.5;
             this.markedForDeletion = false;
         }
         update(){
@@ -176,6 +176,7 @@ window.addEventListener('load',function(){
         }
         addEnemy(){
             this.enemies.push(new Angler1(this));
+            console.log(this.enemies);
         }
     }
 
