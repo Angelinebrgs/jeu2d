@@ -105,8 +105,8 @@ window.addEventListener('load',function(){
     class Angler1 extends Enemy {
         constructor(game){
             super(game);
-            this.width = 228;
-            this.width = 169;
+            this.width = 228 * 0.2;
+            this.height = 169 * 0.2;
             this.y = Math.random() * (this.game.height * 0.9 - this.height);
         }
     }
@@ -178,6 +178,12 @@ window.addEventListener('load',function(){
             this.enemies.push(new Angler1(this));
             console.log(this.enemies);
         }
+        checkCollision(rect1, rect2){
+            return( rect1.x < rect2.x + rect2.width &&
+                    rect1.x < rect1.width > rect2.x &&
+                    rect1.y < rect2.y + rect2.height &&
+                    rect1.height + rect1.y > rect2.y)
+        }
     }
 
     const game = new Game(canvas.width, canvas.height);
@@ -192,4 +198,4 @@ window.addEventListener('load',function(){
         requestAnimationFrame(animate);
     }
     animate(0);
-});
+});*
