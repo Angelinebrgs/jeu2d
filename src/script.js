@@ -1,3 +1,4 @@
+import '../style/style.css';
 window.addEventListener('load',function(){
     //setup du canvas
     const canvas = document.getElementById('canvas1');
