@@ -248,7 +248,7 @@ window.addEventListener('load',function(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         game.update(deltaTime);
         game.draw(ctx);
-        if(!this.gameOver)requestAnimationFrame(animate);
+        requestAnimationFrame(animate)
     }
-    animate(0);
+    if(!this.gameOver)animate(0);
 });
