@@ -186,10 +186,6 @@ window.addEventListener('load',function(){
         update(deltaTime){
             if(!this.gameOver) this.gameTime += deltaTime;
             if(this.gameTime > this.timeLimit) this . gameOver = true;
-            // while(this.gameOver == false){
-            //     this.gameTime += deltaTime;
-            //     if(this.gameTime > this.timeLimit) this . gameOver = true;
-            // }
             console.log('game', this.gameTime);
             this.player.update();
             if(this.ammoTimer > this.ammoInterval){
@@ -251,10 +247,7 @@ window.addEventListener('load',function(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         game.update(deltaTime);
         game.draw(ctx);
-        requestAnimationFrame(animate);
+        if(!this.gameOver)requestAnimationFrame(animate);
     }
-    if (!game.gameOver) {
-        requestAnimationFrame(animate);
-        }
     animate(0);
 });
